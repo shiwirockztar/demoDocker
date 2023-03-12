@@ -1,0 +1,19 @@
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+/* filas */
+.mat-mdc-table .mdc-data-table__row:hover {
+  background-color: var(--btn-playHover);
+}

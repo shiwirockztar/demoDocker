@@ -1,0 +1,38 @@
+<form class="send" (ngSubmit)="formSubmit()">
+  <h2 contenteditable>a</h2>
+  <!--[(ngModel)]="text.nickName"-->
+  <label class="form-label">Enviar</label>
+  <mat-form-field class="example-full-width">
+    <mat-label>Mensaje</mat-label>
+    <input
+      matInput
+      [(ngModel)]="text.msg"
+      name="msg"
+      type="text"
+      #mensaje
+      maxlength="64"
+      placeholder="Escribe un mensaje para el chat..."
+    />
+    <button
+      *ngIf="mensaje.value.length > 0"
+      matSuffix
+      mat-icon-button
+      type="reset"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-hint align="start"><strong>Maximo de caracteres</strong> </mat-hint>
+    <mat-hint align="end">{{ mensaje.value.length }} / 64</mat-hint>
+  </mat-form-field>
+  <button class="enter" mat-raised-button color="primary">Enviar</button>
+</form>
+<div class="inbox">
+  <label class="form-label">Lobby</label>
+  <div class="textarea">
+    <textarea
+      [(ngModel)]="chat"
+      class="form-control"
+      readonly="readonly"
+    ></textarea>
+  </div>
+</div>

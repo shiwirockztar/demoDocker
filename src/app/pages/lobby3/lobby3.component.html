@@ -1,0 +1,75 @@
+<body>
+  <header>
+    <h2 id="name" value="leo" hidden>b</h2>
+    <pre id="id" value="a" hidden> a </pre>
+    <pre id="pass" value="c" (click)="change()" hiddens> c </pre>
+    <input
+      id="username"
+      [value]="text.nickName"
+      [(ngModel)]="text.nickName"
+      #hash
+      contenteditable
+      hiddens
+    />
+    <div class="container text-center">
+      <ng-template [ngIf]="!isAvailabe">
+        <button
+          mat-raised-button
+          (click)="play()"
+          color="success"
+          class="playBtn"
+          style="--clr: #04fc43"
+          style="margin-left: 20px"
+        >
+          Play !
+        </button>
+      </ng-template>
+    </div>
+    <!-- Cronometro -->
+    <ng-template [ngIf]="visibility">
+      <div class="cronometro">
+        <div
+          id="time"
+          class="animate__animated animate__rotateIn"
+          type="hidden"
+        >
+          <div class="circle" style="--clr: #04fc43">
+            <div cLass="dots sec_dot" [ngStyle]="{ transform: time.rot }"></div>
+            <svg>
+              <circle cx="70" cy="70" r="70"></circle>
+              <circle
+                cx="70"
+                cy="70"
+                r="70"
+                id="ss"
+                [ngStyle]="{ strokeDashoffset: time.strok }"
+              ></circle>
+            </svg>
+            <div id="seconds">
+              {{ time.porc }}
+              <br />
+              <span>{{ time.s }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </header>
+  <section>
+    <div class="fullcontainer">
+      <div class="containerLeft col-md-3">
+        <!-- Chat del Lobby -->
+        <app-chat></app-chat>
+      </div>
+
+      <!-- Derecha -->
+      <div class="containerRight col-md-9">
+        <div class="text">
+          <!-- Lista del lobby -->
+          <!-- <app-table-filter></app-table-filter> -->
+          <app-table-filter-and-sort></app-table-filter-and-sort>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
