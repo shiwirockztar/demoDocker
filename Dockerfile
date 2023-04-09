@@ -33,3 +33,6 @@ CMD [ "nginx","-g","daemon off;" ]
 #docker rmi IMAGE-ID ->eliminar imagen (se pueden colocar varios id para eliminar varias imagenes ala vez)
 
 # https://www.youtube.com/watch?v=6VKUiBb_RI4 ->Tutorial - Crear un contenedor de Docker y Angular 9 - NodeJs & Nginx (ESPAÑOL)
+
+
+# Correr ng serve (para este proyecto npm run start, pero no sirve por tal -->) npm run ng serve -- --host=0.0.0.0 --disable-host-check
